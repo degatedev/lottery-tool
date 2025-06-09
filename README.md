@@ -62,10 +62,10 @@ Starting onion hash delay calculation...
 Starting onion hash, total rounds: 800000000
 Progress: 0.13%, Completed 1000000 rounds, Time elapsed: 10.25 seconds
 ...
-Onion hash completed, total time: 7854.32 seconds
-Onion hash calculation completed, intermediate random value: 7a8c2e5f...
-Final random value: 3b9a1d8c...
-🎯 Lottery number (0-99,999,999): 78314592
+Onion hash completed, total time: 965.33 seconds
+Onion hash calculation completed, intermediate random value: e5341e4310b2a6d7de7e985e75d4f7077351d646146cab6d355b603bf780548adf4914d6b56bc1a1227b6873bc243d74
+Final random value: 43fed59a4df9306c79eb634e1f27828b8cc721dc4b1c825d296eec69d174a5fa
+🎯 Lottery number (0-99,999,999): 54969082
 
 Lottery result generated and saved
 Result saved to lottery_result.json
