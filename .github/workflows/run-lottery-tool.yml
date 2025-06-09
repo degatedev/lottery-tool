@@ -1,14 +1,14 @@
 name: Run DeGate Lottery Tool
 
 on:
-  # 👉 1) 手动触发：支持传入自定义 BTC 区块哈希
+  # 👉 1) Manual trigger: supports custom BTC block hash input
   workflow_dispatch:
     inputs:
       block_hash:
-        description: "可选：指定 BTC 区块哈希，留空则使用示例"
+        description: "Optional: Specify BTC block hash, leave empty to use sample"
         required: false
         default: ""
-  # 👉 2) 定时触发（每天 UTC 00:00，可按需修改或删除）
+  # 👉 2) Scheduled trigger (daily at UTC 00:00, modify or remove as needed)
   schedule:
     - cron: '0 0 * * *'
 
@@ -17,22 +17,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. 拉取当前仓库代码（必须）
+    # 1. Checkout repository code (required)
     - uses: actions/checkout@v4
 
-    # 2. 安装 Python 3.12（自动设置 python 命令）
+    # 2. Setup Python 3.12 (auto-configures python command)
     - uses: actions/setup-python@v5
       with:
         python-version: '3.12'
 
-    # 3. 安装依赖（当前脚本不需要，但保持兼容 future-proof）
+    # 3. Install dependencies (not needed for current script, but keeping for future-proofing)
     - name: Install dependencies if any
       run: |
         if [ -f requirements.txt ]; then
           pip install -r requirements.txt
         fi
 
-    # 4. 执行脚本，根据是否传入 block_hash 判断是否输入
+    # 4. Run script, handle input based on whether block_hash was provided
     - name: Run lottery-tool.py
       env:
         BLOCK_HASH: ${{ inputs.block_hash }}
@@ -43,7 +43,7 @@ jobs:
           echo "$BLOCK_HASH" | python lottery-tool.py
         fi
 
-    # 5. 上传结果文件，方便在 Actions 页面下载
+    # 5. Upload result file for easy download from Actions page
     - name: Upload lottery result
       uses: actions/upload-artifact@v4
       with:

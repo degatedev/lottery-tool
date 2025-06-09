@@ -5,7 +5,7 @@ from typing import List
 import time
 
 
-def onion_hash_strong(seed: bytes, rounds=10000 * 1000 * 20) -> bytes:
+def onion_hash_strong(seed: bytes, rounds=10000 * 1000 * 35) -> bytes:
     """
     Strong anti-mining onion hash, using multiple >=256-bit hash functions
     Structure: sha3_256, blake2b, sha512, sha384, sha256
