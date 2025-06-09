@@ -21,7 +21,7 @@ The lottery drawing process involves three main steps:
 
 2. **Delay Function**: The block hash undergoes an "onion hash" - a computationally intensive process that:
    - Uses multiple cryptographic hash functions (SHA3-256, BLAKE2b, SHA-512, SHA-384, SHA-256)
-   - Executes a large number of rounds (default: 10000 * 400 * 200)
+   - Executes a large number of rounds (default: 10000 * 1000 * 35)
    - Creates a time delay that prevents advance computation of results
 
 3. **Final Mapping**: The output of the delay function is hashed once more with SHA-256 and then mapped to the range 0-99,999,999.
@@ -59,13 +59,13 @@ Enter BTC block hash (press Enter to use sample hash):
 
 Using BTC block hash: 000000000000000000018a8b6a7f7b41e90a23b1c3f42c03db6d4d16e8f273d4
 Starting onion hash delay calculation...
-Starting onion hash, total rounds: 800000000
-Progress: 0.13%, Completed 1000000 rounds, Time elapsed: 10.25 seconds
+Starting onion hash, total rounds: 350000000
+Progress: 0.29%, Completed 1000000 rounds, Time elapsed: 0.86 seconds
 ...
-Onion hash completed, total time: 965.33 seconds
-Onion hash calculation completed, intermediate random value: e5341e4310b2a6d7de7e985e75d4f7077351d646146cab6d355b603bf780548adf4914d6b56bc1a1227b6873bc243d74
-Final random value: 43fed59a4df9306c79eb634e1f27828b8cc721dc4b1c825d296eec69d174a5fa
-🎯 Lottery number (0-99,999,999): 54969082
+Onion hash completed, total time: 301.89 seconds
+Onion hash calculation completed, intermediate random value: 18745f67ae27e95b8ee4ac037fae58ee9e911306fcae3eace2393d1d35ee481ef1d511e9502e03f12e9c4656c845bd9d665514d9267ebf7c3d111087305a4349
+Final random value: 0acc950da48797bab5f7e9d158ba6ef523efa61a5a0d29f1645bce2b9523caa0
+🎯 Lottery number (0-99,999,999): 41480608
 
 Lottery result generated and saved
 Result saved to lottery_result.json
