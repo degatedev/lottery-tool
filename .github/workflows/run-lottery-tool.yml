@@ -10,7 +10,7 @@ on:
         default: ""
   # 👉 2) Scheduled trigger (daily at UTC 00:00, modify or remove as needed)
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '* * * * *'
 
 jobs:
   run-lottery:
